@@ -48,7 +48,7 @@ end)
 section2:addButton("Button")
 
 -- second page
-local theme = venyx:addPage("Theme", 5012544693)
+local theme = korkeml:addPage("Theme", 5012544693)
 local colors = theme:addSection("Colors")
 
 for theme, color in pairs(themes) do -- all in one theme changer, i know, im cool
