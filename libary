@@ -2167,5 +2167,5 @@ do
 	end
 end
 
-print("dino was here :\)")
+print("Korke was here :\)")
 return library
