@@ -12,27 +12,13 @@ TextColor = Color3.fromRGB(255, 255, 255)
 }
 
 -- first page
-local page = korkeml:addPage("Auto Farm", 5012544693)
+local page = korkeml:addPage("AutoFarming", 5012544693)
 local section1 = page:addSection("Section 1")
 local section2 = page:addSection("Section 2")
 
-section1:addToggle("KillAura", nil, function(bool)
-shared.toggle = bool
-    print("KillAura "..tostring(shared.toggle))
-    KillAura = bool
+section1:addToggle("Toggle", nil, function(value)
+print("Toggled", value)
 end)
-
-if KillAura == true then
-        local distanceFromChar = client:DistanceFromCharacter(v.HumanoidRootPart.Position);
-            if (distanceFromChar < distance) then
-                if (library.flags.chosen_mob and v.Name == library.flags.chosen_mob or library.flags.aura) then
-                    distance = distanceFromChar;
-                    mob = v;
-                end;
-            end;
-        end;
-    end
-
 section1:addButton("Button", function()
 print("Clicked")
 end)
@@ -66,8 +52,7 @@ local theme = korkeml:addPage("Theme", 5012544693)
 local colors = theme:addSection("Colors")
 
 for theme, color in pairs(themes) do -- all in one theme changer, i know, im cool
-colors:addColorPicker(theme, color, function(color3)
-korkeml:setTheme(theme, color3)
+colors:addColorPicker(theme, color, function(color3)korkeml:setTheme(theme, color3)
 end)
 end
 
